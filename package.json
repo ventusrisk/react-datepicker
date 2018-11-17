@@ -33,7 +33,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "chai": "^3.5.0",
-    "codecov.io": "^0.1.6",
+    "codecov": "^3.1.0",
     "cross-env": "^5.1.1",
     "css-loader": "^0.28.7",
     "enzyme": "^3.1.1",
@@ -106,8 +106,7 @@
     "test": "cross-env NODE_ENV=test karma start karma.conf.js --single-run",
     "prepublish": "test $(npm -v | tr . '\\n' | head -n 1) -ge '4' || exit 1",
     "prepare": "npm run build",
-    "codecov":
-      "cat coverage/*/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js",
+    "codecov": "cat coverage/*/lcov.info | ./node_modules/.bin/codecov",
     "prebuild": "rimraf es lib dist",
     "build": "cross-env NODE_ENV=production run-p build:** && run-p css:**",
     "build-dev":
